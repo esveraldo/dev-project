@@ -1,0 +1,34 @@
+# v2 syntax
+version: '2'
+
+# Named volumes
+volumes:
+  # MySQL Data
+  cacula-mysql-data:
+    driver: local
+
+services:
+  # MySQL (5.7)
+  mysql:
+    image: ambientum/mysql:5.7
+    container_name: cacula-mysql
+    volumes:
+      - cacula-mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=cacula
+      - MYSQL_DATABASE=cacula
+      - MYSQL_USER=cacula
+      - MYSQL_PASSWORD=cacula
+
+  # PHP (with Caddy)
+  app:
+    image: ambientum/php:7.0-caddy
+    container_name: cacula-app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "80:8080"
+    links:
+      - mysql

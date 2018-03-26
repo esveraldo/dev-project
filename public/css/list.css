@@ -1,0 +1,47 @@
+body {
+	background-color: #edf0f5;
+}
+
+header {
+	background-color: #4CB04A;
+	height: 50px;
+	width: 100%;
+	position:fixed;
+	top:0;
+}
+
+header .logo {
+	width: 196px;
+	height: 50px;
+}
+
+.titulo {
+	color: #f0f0f0;
+	font-family: 'Open Sans', serif;
+	font-size: 36px;
+}
+
+.logo {
+	padding-top: 7px;
+}
+
+.list {
+	padding-top: 15%;
+}
+
+.list-owner {
+	color: #fff;
+}
+
+.list-group-item.nome {
+	background-color:#f4f4f5;
+	font-weight: bold;
+}
+
+.list-group-item.info {
+	background-color: #fff;
+}
+
+.list-group-item {
+	border-radius:0 !important;
+}
